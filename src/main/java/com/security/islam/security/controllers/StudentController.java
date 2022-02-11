@@ -2,9 +2,7 @@ package com.security.islam.security.controllers;
 
 import com.security.islam.security.entities.Student;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,7 +13,9 @@ public class StudentController {
     List<Student> students= Arrays.asList(new Student(1, "Islam"), new Student(2, "Mohammed"))  ;
 
    // @PreAuthorize("hasAuthority('student::read')")
-    @Secured("['ROLE_ADMIN','ROLE_STUDENT']")
+    //@Secured("['ROLE_ADMIN','ROLE_STUDENT']") instead f doing this with RoleHierarechy we can use only ROLE_STUDENT
+
+    @Secured("ROLE_STUDENT")
     @GetMapping("/all")
     List<Student> getAll(){
         return students;
