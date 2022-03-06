@@ -35,9 +35,8 @@ public class WebSecurityConfig {
     protected DefaultWebSecurityExpressionHandler webExpressionHandler(RoleHierarchy roleHierarchy) {
         DefaultWebSecurityExpressionHandler defaultWebSecurityExpressionHandler = new DefaultWebSecurityExpressionHandler();
         defaultWebSecurityExpressionHandler.setRoleHierarchy(roleHierarchy);
+
         return defaultWebSecurityExpressionHandler;
     }
-
-
 
 }

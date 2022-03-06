@@ -27,6 +27,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserDetailsServiceImpl userDetailsService;
     private final PasswordEncoder passwordEncoder;
 
+
     @Autowired
     private DefaultWebSecurityExpressionHandler webSecurityExpressionHandler;
 
@@ -40,7 +41,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        // i dont have to be authenticated to use this api below
+        // i dont have to be authenticated to use this api below if i uncomment it
         //  web.ignoring().antMatchers("/api/v1/user/create");
     }
 
@@ -69,7 +70,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     /**
-     * we can implement our own implementation for AuthenticationProvider Interface
+     * we can implement nt our own implementation for AuthenticationProvider Interface
      * in case we ned to override authenticate function
      * such as for failed attempts
      * or  a 3rd party service such as JWT (to confirm)
